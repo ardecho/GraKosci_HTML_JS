@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="pokerstyle.css"><title></title></head>
+    <body background="background3.jpg">
+	<script>
+
+	var player1name = prompt("Podaj nazwę pierwszego gracza:");
+	var player2name = prompt("Podaj nazwę drugiego gracza:");
+
+	if (navigator.appName == "Netscape") {
+    document.write('<embed src="backgroundMusic/The Witcher Music - Lets Play Dice Poker.webm" autostart="true" loop="10" hidden="true"></embed>') }
+    else  if (navigator.appName == "Sylaba") {
+    document.write('<embed src="backgroundMusic/The Witcher Music - Lets Play Dice Poker.webm" autostart="true" loop="10" hidden="true"></embed>') }
+    else { if (navigator.appName == "Microsoft Internet Explorer")
+    document.write('<bgsound src="backgroundMusic/The Witcher Music - Lets Play Dice Poker.webm" autostart="true" loop="10" hidden="true"></bgsound>')
+ 	};
+
+	function losowanie1() {
+
+		var kosc1 = Math.ceil(Math.random() * 6);
+		var kosc2 = Math.ceil(Math.random() * 6);
+		var kosc3 = Math.ceil(Math.random() * 6);
+		var kosc4 = Math.ceil(Math.random() * 6);
+		var kosc5 = Math.ceil(Math.random() * 6);
+	
+ 		document.getElementById("kosc1").src='dice'+kosc1+'.gif';
+ 		document.getElementById("box1").innerHTML= '<input type="checkbox" name="checkbox1" id = "checkbox1">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc2").src='dice'+kosc2+'.gif';
+ 		document.getElementById("box2").innerHTML= '<input type="checkbox" name="checkbox2" id = "checkbox2">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc3").src='dice'+kosc3+'.gif';
+ 		document.getElementById("box3").innerHTML= '<input type="checkbox" name="checkbox3" id = "checkbox3">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc4").src='dice'+kosc4+'.gif';
+ 		document.getElementById("box4").innerHTML= '<input type="checkbox" name="checkbox4" id = "checkbox4">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc5").src='dice'+kosc5+'.gif';
+ 		document.getElementById("box5").innerHTML= '<input type="checkbox" name="checkbox5" id = "checkbox5">LOSUJ PONOWNIE';
+
+ 		document.getElementById("losujButton1").style.visibility='hidden';
+
+ 		document.getElementById("repeatButton1").innerHTML= '<button class="Llosuj" type="button" id="repeat1" onclick="repeat1()">Powtorz</button>';
+
+ 		return wynik1 = kosc1, wynik2 = kosc2, wynik3 = kosc3, wynik4 = kosc4, wynik5 = kosc5, wynikList1 = [wynik1,wynik2,wynik3,wynik4,wynik5], console.log(wynik1,wynik2,wynik3,wynik4,wynik5), console.log(wynikList1);
+	};
+
+	function repeat1() {
+
+		if (document.getElementById("checkbox1").checked){
+			var kosc1 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc1").src='dice'+kosc1+'.gif';
+			wynik1 = kosc1;
+		}
+		if (document.getElementById("checkbox2").checked){
+			var kosc2 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc2").src='dice'+kosc2+'.gif';
+			wynik2 = kosc2;
+		}
+		if (document.getElementById("checkbox3").checked){
+			var kosc3 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc3").src='dice'+kosc3+'.gif';
+			wynik3 = kosc3;
+		}
+		if (document.getElementById("checkbox4").checked){
+			var kosc4 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc4").src='dice'+kosc4+'.gif';
+			wynik4 = kosc4;
+		}
+		if (document.getElementById("checkbox5").checked){
+			var kosc5 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc5").src='dice'+kosc5+'.gif';
+			wynik5 = kosc5
+		}
+
+		document.getElementById("checkbox1").disabled = 'true';
+		document.getElementById("checkbox2").disabled = 'true';
+		document.getElementById("checkbox3").disabled = 'true';
+		document.getElementById("checkbox4").disabled = 'true';
+		document.getElementById("checkbox5").disabled = 'true';
+
+		wynikList1 = [wynik1,wynik2,wynik3,wynik4,wynik5];
+
+		document.getElementById("repeat1").style.visibility='hidden';
+
+		return wynik1,wynik2,wynik3,wynik4,wynik5,wynikList1.sort(), console.log(wynik1,wynik2,wynik3,wynik4,wynik5), console.log(wynikList1);
+	};
+//--------------------------------------------------------------------------------------------------------------------------------------------
+		function losowanie2() {
+
+		var kosc6 = Math.ceil(Math.random() * 6);
+		var kosc7 = Math.ceil(Math.random() * 6);
+		var kosc8 = Math.ceil(Math.random() * 6);
+		var kosc9 = Math.ceil(Math.random() * 6);
+		var kosc10 = Math.ceil(Math.random() * 6);
+	
+ 		document.getElementById("kosc6").src='dice'+kosc6+'.jpg';
+ 		document.getElementById("box6").innerHTML= '<input type="checkbox" name="checkbox6" id = "checkbox6">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc7").src='dice'+kosc7+'.jpg';
+ 		document.getElementById("box7").innerHTML= '<input type="checkbox" name="checkbox7" id = "checkbox7">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc8").src='dice'+kosc8+'.jpg';
+ 		document.getElementById("box8").innerHTML= '<input type="checkbox" name="checkbox8" id = "checkbox8">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc9").src='dice'+kosc9+'.jpg';
+ 		document.getElementById("box9").innerHTML= '<input type="checkbox" name="checkbox9" id = "checkbox9">LOSUJ PONOWNIE';
+ 		document.getElementById("kosc10").src='dice'+kosc10+'.jpg';
+ 		document.getElementById("box10").innerHTML= '<input type="checkbox" name="checkbox10" id = "checkbox10">LOSUJ PONOWNIE';
+
+ 		document.getElementById("losujButton2").style.visibility='hidden';
+
+ 		document.getElementById("repeatButton2").innerHTML= '<button class="Plosuj" type="button" id="repeat2" onclick="repeat2()">Powtorz</button>';
+
+ 		return wynik6 = kosc6, wynik7 = kosc7, wynik8 = kosc8, wynik9 = kosc9, wynik10 = kosc10, wynikList2 = [wynik6,wynik7,wynik8,wynik9,wynik10], console.log(wynik6,wynik7,wynik8,wynik9,wynik10), console.log(wynikList2);
+	};
+
+	function repeat2() {
+
+		if (document.getElementById("checkbox6").checked){
+			var kosc6 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc6").src='dice'+kosc6+'.jpg';
+			wynik6 = kosc6;
+		}
+		if (document.getElementById("checkbox7").checked){
+			var kosc7 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc7").src='dice'+kosc7+'.jpg';
+			wynik7 = kosc7;
+		}
+		if (document.getElementById("checkbox8").checked){
+			var kosc8 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc8").src='dice'+kosc8+'.jpg';
+			wynik8 = kosc8;
+		}
+		if (document.getElementById("checkbox9").checked){
+			var kosc9 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc9").src='dice'+kosc9+'.jpg';
+			wynik9 = kosc9;
+		}
+		if (document.getElementById("checkbox10").checked){
+			var kosc10 = Math.ceil(Math.random() * 6);
+			document.getElementById("kosc10").src='dice'+kosc10+'.jpg';
+			wynik10 = kosc10
+		}
+
+		document.getElementById("checkbox6").disabled = 'true';
+		document.getElementById("checkbox7").disabled = 'true';
+		document.getElementById("checkbox8").disabled = 'true';
+		document.getElementById("checkbox9").disabled = 'true';
+		document.getElementById("checkbox10").disabled = 'true';
+
+		wynikList2 = [wynik6,wynik7,wynik8,wynik9,wynik10];
+
+		document.getElementById("repeat2").style.visibility='hidden';
+
+		return wynik6,wynik7,wynik8,wynik9,wynik10,wynikList2.sort(), console.log(wynik6,wynik7,wynik8,wynik9,wynik10), console.log(wynikList2);
+	};
+
+	function test(){
+
+		var suma1 = 0;
+ 		for (var i = 0; i < wynikList1.length; i++) {
+   			suma1 = suma1 + wynikList1[i];
+		};
+
+		var suma2 = 0;
+ 		for (var i = 0; i < wynikList2.length; i++) {
+   			suma2 = suma2 + wynikList2[i];
+		};
+
+		alert("Gracz " + player1name + " uzyskał liczbę punktów: " + suma1);
+		alert("Gracz " + player2name + " uzyskał liczbę punktów: " + suma2);
+
+		if (suma1 > suma2) {
+			alert("Gracz " + player1name + " WYGRAŁ!")
+		} else {
+			alert("Gracz " + player2name + " WYGRAŁ!")
+		};
+	};
+
+	</script>
+
+	<div class="mid">
+		<button class="check" type="button" id="test" onclick="test()">SPRAWDŹ!</button>
+	</div>
+
+	<div>
+	</div>
+
+	<div>
+		<div class="lewy">
+			<h1 style="text-align: left; float: left; padding-top: 5px; padding-right: 30px; padding-bottom: 5px; padding-left: 30px;"><script>document.write(player1name)</script></h1>
+			<div>
+				<button class="Llosuj" type="button" id="losujButton1" onclick="losowanie1()">Losuj Gracz 1</button>
+			<div>
+				<p id="repeatButton1"></p>
+			</div>
+			</div>
+			<div class="lewy">
+				<div>
+					<img class="img" id="kosc1">
+					<p class="checkbox" id="box1"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc2">
+					<p class="checkbox" id="box2"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc3">
+					<p class="checkbox" id="box3"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc4">
+					<p class="checkbox" id="box4"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc5">
+					<p class="checkbox" id="box5"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="prawy">
+			<h1 style="text-align: right; float: right; padding-top: 5px; padding-right: 30px; padding-bottom: 5px; padding-left: 30px;"><script>document.write(player2name)</script></h1>
+			<div>
+				<button class="Plosuj" type="button" id="losujButton2" onclick="losowanie2()">Losuj Gracz 2</button>
+			<div>
+				<p id="repeatButton2"></p>
+			</div>
+			</div>
+			<div class="prawy">
+				<div>
+					<img class="img" id="kosc6">
+					<p class="checkbox" id="box6"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc7">
+					<p class="checkbox" id="box7"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc8">
+					<p class="checkbox" id="box8"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc9">
+					<p class="checkbox" id="box9"></p>
+				</div>
+				<div>
+					<img class="img" id="kosc10">
+					<p class="checkbox" id="box10"></p>
+				</div>
+			</div>
+		</div>
+    </div>
+    </body>
+</html>
